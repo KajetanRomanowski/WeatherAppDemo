@@ -51,7 +51,7 @@ namespace WeatherApp.Controllers
         [HttpGet]
         public ActionResult Register()
         {
-            ViewBag.Title = "User Sign Up";
+            ViewBag.Title = "Register";
 
             return View();
         }
