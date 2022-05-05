@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Owin;
 using Owin;
+using WeatherApp.Helpers;
 
 [assembly: OwinStartup(typeof(WeatherApp.Startup))]
 
@@ -13,6 +14,7 @@ namespace WeatherApp
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            APIHelper.InitializeClient();
         }
     }
 }
