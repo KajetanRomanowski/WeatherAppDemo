@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using WeatherApp.Models;
-using DataLibrary;
-using static DataLibrary.BusinessLogic.WeatherProcessor;
-using WeatherApp.Helpers;
 using System.Threading.Tasks;
-using System.Configuration;
+using System.Web.Mvc;
+using WeatherApp.Helpers;
+using WeatherApp.Models;
 
 namespace WeatherApp.Controllers
 {

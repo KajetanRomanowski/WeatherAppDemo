@@ -1,11 +1,8 @@
-﻿using System;
+﻿using DataLibrary.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using DataLibrary.Models;
-using Microsoft.AspNet.Identity;
 using static DataLibrary.BusinessLogic.WeatherProcessor;
 
 namespace WeatherApp.Controllers

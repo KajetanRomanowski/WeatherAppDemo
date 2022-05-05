@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>EFDataBase</Name>
+    <Name>aspnet_WeatherApp_20220430042054</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{6741b31c-7ca1-45ca-a7dc-93446f6f396d}</ProjectGuid>
+    <ProjectGuid>{860d2fa0-5eb4-4fb0-9d80-ad43f18669b2}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>EFDataBase</RootNamespace>
-    <AssemblyName>EFDataBase</AssemblyName>
+    <RootNamespace>aspnet_WeatherApp_20220430042054</RootNamespace>
+    <AssemblyName>aspnet_WeatherApp_20220430042054</AssemblyName>
     <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -121,6 +121,7 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\AspNetRoles.sql">
