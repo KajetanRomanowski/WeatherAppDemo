@@ -64,10 +64,6 @@ namespace WeatherApp.Helpers
             var buffer = System.Text.Encoding.UTF8.GetBytes(data);
             var byteContent = new ByteArrayContent(buffer);
             byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-
-            //HttpContent content = new StringContent(data, Encoding.UTF8, "application/json");
-
             var  response = await apiClient.PostAsync("/api/account/register", byteContent);
             return response.IsSuccessStatusCode;
         }
@@ -125,7 +121,6 @@ namespace WeatherApp.Helpers
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    //var json = await response.Content.ReadAsAsync<string>();
                     var json = await response.Content.ReadAsStringAsync();
                     dynamic result = JsonConvert.DeserializeObject(json);
                     WeatherModel resultModel = new WeatherModel();
@@ -134,20 +129,33 @@ namespace WeatherApp.Helpers
                     foreach (var day in result.days)
                     {
                         dt = day.datetime;
-                        temp = day.temp;
-                        temp = temp.Replace(".", ",");
-                        resultModel.Temperature = Convert.ToDouble(temp);
-                        temp = day.humidity;
-                        temp = temp.Replace(".", ",");
-                        resultModel.Humidity = Convert.ToDouble(temp);
-                        temp = day.pressure;
-                        temp = temp.Replace(".", ",");
-                        resultModel.Pressure = Convert.ToDouble(temp);
-                        temp = day.windspeed;
-                        temp = temp.Replace(".", ",");
-                        resultModel.Wind = Convert.ToDouble(temp);
                     }
-                        dt = dt + " " + result.currentConditions.datetime;
+                    dt = dt + " " + result.currentConditions.datetime;
+
+                    temp = result.currentConditions.temp;
+                    if (result.currentConditions.temp == null)
+                        temp = "0";
+                    temp = temp.Replace(".", ",");
+                    resultModel.Temperature = Convert.ToDouble(temp);
+
+                    temp = result.currentConditions.humidity;
+                    if (result.currentConditions.humidity == null)
+                        temp = "0";
+                    temp = temp.Replace(".", ",");
+                    resultModel.Humidity = Convert.ToDouble(temp);
+
+                    temp = result.currentConditions.pressure;
+                    if (result.currentConditions.pressure == null)
+                        temp = "0";
+                    temp = temp.Replace(".", ",");
+                    resultModel.Pressure = Convert.ToDouble(temp);
+
+                    temp = result.currentConditions.windspeed;
+                    if (result.currentConditions.windspeed == null)
+                        temp = "0";
+                        temp = temp.Replace(".", ",");
+                    resultModel.Wind = Convert.ToDouble(temp);
+
                     resultModel.DateTime = Convert.ToDateTime(dt);
                     return resultModel;
                 }

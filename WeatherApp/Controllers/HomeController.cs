@@ -36,12 +36,7 @@ namespace WeatherApp.Controllers
                     ViewBag.Title = "Log In";
                     AuthenticatedUser user = new AuthenticatedUser();
                     user = await APIHelper.Authenticate(formCollection[1], formCollection[2]);
-                    //TempData["user"] = user;
                     this.Session["user"] = user;
-                    //ViewBag.User = await APIHelper.Authenticate(formCollection[1], formCollection[2]);
-
-                    //string api = ConfigurationManager.AppSettings["api"];
-                    //return Redirect($"{api}LoggedIn/");
                     return RedirectToAction("Index", "LoggedIn");
                 }
                 catch (Exception ex)

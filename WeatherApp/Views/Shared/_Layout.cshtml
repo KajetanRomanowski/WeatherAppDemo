@@ -22,16 +22,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nazwa aplikacji", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Weather App Demo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Register", "Register", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Weather Data", "Index", "LoggedIn", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Refresh Data", "post", "LoggedIn", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("API", "Index", "Swagger", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Log Out", "LogOut", "LoggedIn", new { area = "" }, null)</li>
-                    
                 </ul>
             </div>
         </div>

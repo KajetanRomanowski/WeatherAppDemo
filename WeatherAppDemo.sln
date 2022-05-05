@@ -9,6 +9,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WeatherDB", "WeatherDB\Weat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{E3585900-2EEC-47FE-92DB-07C8B6188FD9}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EFDataBase", "EFDataBase\EFDataBase.sqlproj", "{6741B31C-7CA1-45CA-A7DC-93446F6F396D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,12 @@ Global
 		{E3585900-2EEC-47FE-92DB-07C8B6188FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3585900-2EEC-47FE-92DB-07C8B6188FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3585900-2EEC-47FE-92DB-07C8B6188FD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6741B31C-7CA1-45CA-A7DC-93446F6F396D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6741B31C-7CA1-45CA-A7DC-93446F6F396D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6741B31C-7CA1-45CA-A7DC-93446F6F396D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6741B31C-7CA1-45CA-A7DC-93446F6F396D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6741B31C-7CA1-45CA-A7DC-93446F6F396D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6741B31C-7CA1-45CA-A7DC-93446F6F396D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

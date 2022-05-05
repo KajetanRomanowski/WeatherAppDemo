@@ -8,20 +8,9 @@ namespace WeatherApp.Controllers
     [Authorize]
     public class LoggedInController : Controller
     {
-
         public async Task<ActionResult> Index()
         {
-            //APIHelper.InitializeClient();
-            //AuthenticatedUser user = TempData["user"] as AuthenticatedUser;
             AuthenticatedUser user = this.Session["user"] as AuthenticatedUser;
-
-            
-            //ViewBag.User = user;
-
-            //ViewData.Clear();
-
-            //bool registered = await APIHelper.Register("Witam@witam.l3p", "Qwerty1.", "Qwerty1.");
-
             ViewBag.Title = "Weather Data";
             if (user != null)
             {
@@ -45,10 +34,16 @@ namespace WeatherApp.Controllers
 
         public async Task<ActionResult> Post()
         {
-            {
+            AuthenticatedUser user = this.Session["user"] as AuthenticatedUser;
+            if (user != null)
+            {           
                 WeatherModel weatherModel = await APIHelper.GetWeatherExternal();
                 bool posted = await APIHelper.PostWeather(weatherModel);
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
             }
         }
     }

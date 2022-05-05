@@ -17,8 +17,6 @@ namespace WeatherApp.Controllers
         // GET api/values
         public IHttpActionResult Get()
         {
-            //string userId = RequestContext.Principal.Identity.GetUserId();
-            //var data = LoadWeather();
             if (data == null)
             return Content(HttpStatusCode.NotFound, "Requested data has not been found.");
             return Ok(data);
@@ -33,22 +31,14 @@ namespace WeatherApp.Controllers
             return Ok(weather);
         }
 
-        
+
 
         // POST api/values
+        [Authorize(Roles = "Admin")]
         public void Post(Models.WeatherModel newWeather)
         {
             CreateWeather(newWeather.DateTime, newWeather.Temperature, newWeather.Humidity, newWeather.Pressure, newWeather.Wind);
         }
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
-        }
     }
 }

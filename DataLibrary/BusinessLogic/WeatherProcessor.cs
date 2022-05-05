@@ -30,7 +30,7 @@ namespace DataLibrary.BusinessLogic
         public static List<WeatherModel> LoadWeather()
         {
             string sql = @"select ID, DateTime, Temperature, Humidity, Pressure, Wind
-                            from dbo.Weather;";
+                            from dbo.Weather order by ID desc;";
             return SqlDataAccess.LoadData<WeatherModel>(sql);
         }
     }
